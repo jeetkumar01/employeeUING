@@ -1,0 +1,13 @@
+
+<h3 style="margin-left:39%">Click on employee's names for the details.</h3>
+ <div *ngIf="dataLoaded">
+    <mat-selection-list #shoes [multiple]="false" *ngIf="employeeEmpty">
+        <mat-list-option class="list" *ngFor="let empl of employee" [value]="empl" [routerLink]="['/details',empl.id]">
+          {{empl.fName}}
+        </mat-list-option>
+      </mat-selection-list>
+      <div *ngIf="!employeeEmpty">
+        <div style="margin-left:43% ;">Employee not available.</div>
+        </div>
+ </div> <button style="float:right ;margin-right:100px ;" [routerLink]="['/employee']">Add Employee</button>
+

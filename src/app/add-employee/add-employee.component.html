@@ -1,0 +1,25 @@
+<div style="margin-left:44%;">
+    <div class="container">
+        <form [formGroup]="uploadForm" (ngSubmit)="submitForm()">
+            <div class="form-group input-group-lg">
+                <input class="form-control" type="number" placeholder="id" formControlName="id">
+            </div>
+            <br>
+            <div class="form-group input-group-lg">
+                <input class="form-control" placeholder="First Name" formControlName="fName">
+            </div>
+            <br>
+            <div class="form-group input-group-lg">
+                <input class="form-control" placeholder="Last Name" formControlName="lName">
+            </div>
+            <br>
+            <div class="form-group input-group-lg">
+                <input class="form-control" placeholder="Company Name" formControlName="companyName">
+            </div>
+            <br>
+            <div class="form-group">
+                <button style="margin-left:45px ;">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
