@@ -8,7 +8,7 @@ export class DashboardService {
 
   constructor(private http:HttpClient) { }
 
-  getEmployees(){
-    return this.http.get("http://localhost:8080/api/employee");
+  getOrder(){
+    return this.http.get("http://localhost:8080/api/order");
   }
 }

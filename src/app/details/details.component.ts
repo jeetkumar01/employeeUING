@@ -8,14 +8,14 @@ import { DetailService } from './detail.service';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-employeeDetails:any=[];
+orderDetails:any=[];
   constructor(private route:ActivatedRoute,private service:DetailService) { }
 
   ngOnInit(): void {
     
-    this.service.getEmployeeDetails(this.route.snapshot.params).subscribe(data=>{
-  this.employeeDetails=data;
-  console.log(this.employeeDetails);
+    this.service.getOrderDetails(this.route.snapshot.params).subscribe(data=>{
+  this.orderDetails=data;
+  console.log(this.orderDetails);
     })
 
   }

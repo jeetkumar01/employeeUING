@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AddEmployeeService {
+export class AddOrderService {
 
   constructor(private http:HttpClient) { }
 
-  addEmployee(employee:any){
-    return this.http.post('http://localhost:8080/api/employee',employee);
+  addOrder(order:any){
+    return this.http.post('http://localhost:8080/api/order',order);
   }
 }

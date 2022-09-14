@@ -10,20 +10,20 @@ import { DashboardService } from './dashboard.service';
 export class DashboardComponent implements OnInit {
 
   constructor(private service:DashboardService) { }
-  employee:any;
-  employeeEmpty:any=false;
+  order:any;
+  orderEmpty:any=false;
   dataLoaded:any=false;
 
   ngOnInit(): void {
-    this.service.getEmployees().subscribe((data)=>{
+    this.service.getOrder().subscribe((data)=>{
      
-        this.employee=data;
-        if(this.employee.length>0){
+        this.order=data;
+        if(this.order.length>0){
           this.dataLoaded=true;
-          this.employeeEmpty=true;
+          this.orderEmpty=true;
         }else{
           this.dataLoaded=true;
-          this.employeeEmpty=false;
+          this.orderEmpty=false;
         }
         
     })

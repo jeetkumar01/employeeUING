@@ -7,8 +7,8 @@ import { Injectable } from '@angular/core';
 export class DetailService {
 
   constructor(private http:HttpClient) { }
-  getEmployeeDetails(id:any){
+  getOrderDetails(id:any){
     
-    return this.http.get(`http://localhost:8080/api/employee/${id.id}`);
+    return this.http.get(`http://localhost:8080/api/order/${id.id}`);
   }
 }

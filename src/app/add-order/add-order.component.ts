@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AddEmployeeService } from './add-employee.service';
+import { AddOrderService } from './add-order.service';
 
 @Component({
-  selector: 'app-add-employee',
-  templateUrl: './add-employee.component.html',
-  styleUrls: ['./add-employee.component.css']
+  selector: 'app-add-order',
+  templateUrl: './add-order.component.html',
+  styleUrls: ['./add-order.component.css']
 })
-export class AddEmployeeComponent implements OnInit {
+export class AddOrderComponent implements OnInit {
   uploadForm:any= FormGroup; 
-  constructor(private formBuilder: FormBuilder,private service:AddEmployeeService,private router:Router) { }
+  constructor(private formBuilder: FormBuilder,private service:AddOrderService,private router:Router) { }
 
   ngOnInit(): void {
     this.uploadForm = this.formBuilder.group({
@@ -34,7 +34,7 @@ export class AddEmployeeComponent implements OnInit {
     });
     var json = JSON.stringify(object);
     
-    this.service.addEmployee(object).subscribe((data)=>{
+    this.service.addOrder(object).subscribe((data)=>{
         this.router.navigate(['/dashboard']);
     })
   

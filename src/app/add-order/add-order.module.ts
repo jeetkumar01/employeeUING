@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AddEmployeeRoutingModule } from './add-employee-routing.module';
-import { AddEmployeeComponent } from './add-employee.component';
+import { AddOrderRoutingModule } from './add-order-routing.module';
+import { AddOrderComponent } from './add-order.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddEmployeeService } from './add-employee.service';
+import { AddOrderService } from './add-order.service';
 
 
 @NgModule({
   declarations: [
-    AddEmployeeComponent
+    AddOrderComponent
   ],
   imports: [
     CommonModule,
-    AddEmployeeRoutingModule,
+    AddOrderRoutingModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers:[AddEmployeeService]
+  providers:[AddOrderService]
 })
-export class AddEmployeeModule { }
+export class AddOrderModule { }
