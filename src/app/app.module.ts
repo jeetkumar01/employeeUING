@@ -7,6 +7,9 @@ import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
 import { DetailsRoutingModule } from './details/details-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthenticationService } from './authentication.service';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { AuthenticationService } from './authentication.service';
     AppRoutingModule,
     DashboardRoutingModule,
     DetailsRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

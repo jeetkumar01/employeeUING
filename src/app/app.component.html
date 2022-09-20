@@ -1,4 +1,10 @@
-<h1 style="cursor:pointer ;" [routerLink]="['/dashboard']">Home</h1><h1 style="margin-left:40% ;">Welcome to the demo.</h1>
-<h2 style="float:right ;cursor:pointer;margin-top:-45px;margin-right: 50px;" *ngIf="loggedIn=='true'"(click)="logout()">Logout</h2><br>
-<hr>
+<mat-toolbar color="primary" style="margin-bottom:50px ;">
+    <mat-toolbar-row>
+      <span [routerLink]="['/dashboard']" style="cursor:pointer">Demo</span>
+      <span class="example-spacer"></span>
+      <button *ngIf="loggedIn=='true'"(click)="logout()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        Logout
+      </button>
+    </mat-toolbar-row>
+</mat-toolbar>
 <router-outlet></router-outlet>
