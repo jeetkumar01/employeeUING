@@ -21,6 +21,10 @@
     width: 100%;
   }
 
+  .credsErr{
+    color:red;
+    margin-left: 43%;
+  }
 
   
  

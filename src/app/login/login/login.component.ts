@@ -25,6 +25,7 @@ uploadForm:any= FormGroup;
     });
  
   }
+  loginCredsResp:Boolean=true;
 
   login(){
     var formData: any = new FormData();
@@ -35,15 +36,20 @@ uploadForm:any= FormGroup;
       object[key] = value;
   });
 
-    this.service.getLoginStatus(object).subscribe(data=>{
-      if (data) {
-        localStorage.setItem('loggedIn',data.toString());
+    this.service.getLoginStatus(object).subscribe(result=>{
+      
+      
+        localStorage.setItem('loggedIn',result.toString());
         this.sharedService.updateLoginStatus();
         this.router.navigate(['/dashboard']);
-      }else{
-        this.router.navigate(['']);
-      }
       
+      
+    },(err)=>{
+      this.loginCredsResp=false;
+      setTimeout(()=>{
+        this.loginCredsResp=true;
+      },2000)
+      this.router.navigate(['']);
     })
   }
 

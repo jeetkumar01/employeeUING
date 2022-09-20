@@ -11,7 +11,11 @@ export class AppSharedService {
   }
 
   updateLoginStatus() {
-    this.status.emit('true');
+    if(localStorage.getItem('loggedIn')=='true'){
+      this.status.emit('true');
+    }else{
+      this.status.emit('false');
+    }
   }
 
   getEmittedValue() {
