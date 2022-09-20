@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardService } from './dashboard.service';
 import {MatListModule} from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {MatListModule} from '@angular/material/list';
     CommonModule,
     DashboardRoutingModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule
   ],
   providers: [DashboardService]
 })

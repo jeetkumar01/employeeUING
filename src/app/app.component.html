@@ -1,3 +1,4 @@
 <h1 style="cursor:pointer ;" [routerLink]="['/dashboard']">Home</h1><h1 style="margin-left:40% ;">Welcome to the demo.</h1>
+<h2 style="float:right ;cursor:pointer;margin-top:-45px;margin-right: 50px;" *ngIf="loggedIn=='true'"(click)="logout()">Logout</h2><br>
 <hr>
 <router-outlet></router-outlet>

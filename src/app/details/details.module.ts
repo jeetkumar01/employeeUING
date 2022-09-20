@@ -6,6 +6,7 @@ import { DetailsComponent } from './details.component';
 import { DetailService } from './detail.service';
 import { HttpClientModule } from '@angular/common/http';
 
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     DetailsRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers:[DetailService]
 })

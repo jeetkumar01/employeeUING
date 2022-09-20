@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AddOrderService {
+export class LoginService {
 
   constructor(private http:HttpClient) { }
-
-  addOrder(order:any){
-    return this.http.post('http://localhost:8080/order',order,{responseType: 'text'});
+  getLoginStatus(loginDetails:any){
+    
+    return this.http.post('http://localhost:8080/login',loginDetails);
   }
 }

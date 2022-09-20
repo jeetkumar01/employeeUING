@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DetailService } from './detail.service';
 
+
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -14,10 +16,17 @@ orderDetails:any=[];
   ngOnInit(): void {
     
     this.service.getOrderDetails(this.route.snapshot.params).subscribe(data=>{
+      
   this.orderDetails=data;
-  console.log(this.orderDetails);
     })
 
   }
 
+  updateStatus(id:any){
+      this.service.updateOrderStatus(id).subscribe(data=>{
+        this.ngOnInit();
+      }
+
+      )
+  }
 }

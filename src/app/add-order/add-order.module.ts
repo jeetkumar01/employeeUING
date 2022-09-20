@@ -5,6 +5,7 @@ import { AddOrderRoutingModule } from './add-order-routing.module';
 import { AddOrderComponent } from './add-order.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddOrderService } from './add-order.service';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AddOrderService } from './add-order.service';
     CommonModule,
     AddOrderRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule
   ],
   providers:[AddOrderService]
 })

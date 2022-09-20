@@ -9,6 +9,6 @@ export class DashboardService {
   constructor(private http:HttpClient) { }
 
   getOrder(){
-    return this.http.get("http://localhost:8080/api/order");
+    return this.http.get("http://localhost:8080/order");
   }
 }

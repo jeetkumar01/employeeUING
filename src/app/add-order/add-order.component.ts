@@ -14,28 +14,35 @@ export class AddOrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.uploadForm = this.formBuilder.group({
-      id:[''],
-      fName: [''],
-      lName:[''],
-      companyName:['']
+      poNumber:[''],
+      poName: [''],
+      poType:[''],
+      containerId:[''],
+      expDelDate:[''],
+      price:['']
 
     });
   }
 
   submitForm() {
     var formData: any = new FormData();
-    formData.append('id', this.uploadForm.get('id').value);
-    formData.append('fName', this.uploadForm.get('fName').value);
-    formData.append('lName', this.uploadForm.get('lName').value);
-    formData.append('companyName', this.uploadForm.get('companyName').value);
+    formData.append('poNumber', this.uploadForm.get('poNumber').value);
+    formData.append('poName', this.uploadForm.get('poName').value);
+    formData.append('poType', this.uploadForm.get('poType').value);
+    formData.append('containerId', this.uploadForm.get('containerId').value);
+    formData.append('expectedDeliveryDate', this.uploadForm.get('expDelDate').value);
+    formData.append('price', this.uploadForm.get('price').value);
     var object:any = {};
     formData.forEach(function(value:any, key:any){
         object[key] = value;
     });
-    var json = JSON.stringify(object);
     
     this.service.addOrder(object).subscribe((data)=>{
+      
+      if(data=="Order added successfully"){
         this.router.navigate(['/dashboard']);
+      }
+       
     })
   
   }

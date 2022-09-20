@@ -8,7 +8,11 @@ export class AuthenticationService {
   constructor() { }
 
   public isAuthenticated(): boolean {
-    //call an api for login details
-    return false;
+    if(localStorage.getItem('loggedIn')=='true'){
+      return true;
+    }else{
+      return false;
+    }
+   
   }
 }
