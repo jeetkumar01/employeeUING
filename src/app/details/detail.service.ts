@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class DetailService {
   constructor(private http:HttpClient) { }
   getOrderDetails(id:any){
     
-    return this.http.get(`http://localhost:8080/order/${id.id}`);
+    return this.http.get(environment.baseUrl+`/order/${id.id}`);
   }
 
   updateOrderStatus(orderId:any){
@@ -17,6 +18,6 @@ export class DetailService {
       id:orderId
     }
     
-    return this.http.put(`http://localhost:8080/order`,orderDetails);
+    return this.http.put(environment.baseUrl+`/order`,orderDetails);
   }
 }

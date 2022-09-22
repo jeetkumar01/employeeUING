@@ -37,13 +37,9 @@ uploadForm:any= FormGroup;
   });
 
     this.service.getLoginStatus(object).subscribe(result=>{
-      
-      
         localStorage.setItem('loggedIn',result.toString());
         this.sharedService.updateLoginStatus();
         this.router.navigate(['/dashboard']);
-      
-      
     },(err)=>{
       this.loginCredsResp=false;
       setTimeout(()=>{

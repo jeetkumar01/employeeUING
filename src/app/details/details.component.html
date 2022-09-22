@@ -12,12 +12,17 @@
 <br>
 <div>Exp. Del. Date: {{orderDetails.expectedDeliveryDate}}</div>
 <br>
-<div>Actual Del. Date: {{orderDetails.actualDeliveryDate}}</div>
+<div *ngIf="orderDetails.actualDeliveryDate!=null">Actual Del. Date: {{orderDetails.actualDeliveryDate}}</div>
+<div  *ngIf="orderDetails.actualDeliveryDate==null">
+    <div>Actual Del. Date: Not Available</div>
+</div>
 <br>
 <div>Price: {{orderDetails.price}}</div>
 </div>
+<button mat-raised-button class="button" color="primary" style="margin-left:5%;margin-top: 30px;" [routerLink]="['/dashboard']">Back</button>
 
-<button mat-raised-button class="button" color="primary" style="float:right ;margin-right:100px ;"
- *ngIf="orderDetails.status=='pending'" (click)="updateStatus(orderDetails.id)">Mark Delivered</button>
+<button mat-raised-button class="button" color="primary" style="float:right ;margin-right:100px ;margin-top: 30px;"
+ *ngIf="orderDetails.status=='Pending'" (click)="updateStatus(orderDetails.id)">Mark Delivered</button>
+
 
 
